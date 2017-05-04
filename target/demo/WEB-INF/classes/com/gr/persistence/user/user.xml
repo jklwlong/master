@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gr.user.mapper.UserMapper">
+
+<resultMap id="ResultMap" type="java.util.Map">
+	<result property="username" column="username"/>
+	<result property="password" column="password"/> 
+</resultMap>
+
+<select id="queryAll" resultType="com.gr.common.domain.UserDomain">
+	select * from user
+</select>
+
+<select id="queryOne" resultType="map">
+	select * from user where username = 'admin'
+</select>
+
+<select id="insert">
+	insert into `user` VALUES(null,'t1','t1',11,'t1','t1',11)
+</select>
+
+</mapper>
